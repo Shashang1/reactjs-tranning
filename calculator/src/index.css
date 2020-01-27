@@ -1,0 +1,60 @@
+* {
+  box-sizing: border-box;
+}
+
+.container {
+  width: 40%;
+  margin: auto;
+  align-items: center;
+}
+
+.but{
+  width: 24%;
+  padding: 10px;
+  font-size: 18px;
+  background-color: tomato;
+  border-radius: 12px;
+  color: white;
+  margin: 2px;
+}
+
+.but-1{
+  width: 49%;
+  padding: 10px;
+  font-size: 18px;
+  background-color: tomato;
+  border-radius: 12px;
+  color: white;
+  margin: 2px;
+}
+.but-2{
+  width: 99%;
+  padding: 10px;
+  font-size: 18px;
+  background-color: tomato;
+  border-radius: 12px;
+  color: white;
+  margin: 2px;
+}
+#inp{
+  width: 99%;
+  margin: 2px;
+  padding: 10px;
+  font-size: 18px;
+  background-color: cornflowerblue;
+  border: none;
+  margin-top: 100px;
+  border-radius: 12px;
+}
+
+@media only screen and (max-width: 1030px){
+  .but, .but-1, .but-2{
+    margin:1px;
+  }
+}
+
+@media only screen and (max-width: 550px){
+  .but, .but-1, .but-2{
+    margin:1px 0px;
+  }
+}
