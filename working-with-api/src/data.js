@@ -1,18 +1,27 @@
 import React from 'react';
 
+
 export function Data(props){
-  const obj = props.of;
-  let array =["Name: "+obj.name,"Username: "+obj.username,"E-mail: "+obj.email,
-    "Address: "+obj.address.street+" "+obj.address.suite+" "+obj.address.city,
-    "Phone: "+obj.phone,"Zip :"+obj.address.zipcode];
-  array = array.map((value,index)=><li key= {index+1} className="name list-group-item bg-secondary text-white">{value}</li> )
+  let arr =[];
+  let i = 0;
+  let obj = props.of;
+  function iterateObj(obj){
+    for(let key in obj){
+        if(typeof(obj[key])==="object"){
+            iterateObj(obj[key]);
+        }
+        else{
+            arr.push(<li key={i++} className="list-group-item bg-secondary text-white data"> {key+": "+obj[key]}</li>)
+        }
+     }
+  }
+  iterateObj(obj);
   
   return (
   <div className='col'>
   <ul className='obj list-group list-group-flush bg-secondary'>
-    <li key={0} className="id list-group-item bg-success text-white">Id: {obj.id}</li>
-    {array}
+      {arr}
   </ul>
   </div>
-)
+  )
 }
