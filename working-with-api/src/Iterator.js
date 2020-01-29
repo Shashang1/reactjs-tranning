@@ -15,7 +15,7 @@ class Iterator extends React.Component{
             this.iterateObj(obj[key]);
         }
         else{
-            this.arr.push(<li key={i++} className="list-group-item bg-secondary text-white data"> {key+": "+obj[key]}</li>)
+            this.arr.push(<li key={i++} className="list-group-item bg-dark text-white data"> {key+": "+obj[key]}</li>)
         }
      }
   }
