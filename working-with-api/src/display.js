@@ -8,7 +8,7 @@ export function Display(props){
     let arr = data.map((value,index)=><Data key={index} of={value}/>)
     return  (
     <div className="container">
-      <h1>Below is the Data:</h1>
+      <h1 className="bg-primary text-white">Below is the Data:</h1>
       <div className='row'>{arr}</div>
     </div>
     )
