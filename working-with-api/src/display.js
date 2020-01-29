@@ -5,8 +5,13 @@ export function Display(props){
   let data = props.data;
   
   if(data.length > 0 ){
-    let arr = data.map((value)=><Data of={value}/>)
-    return <div className="container"><h1>Below is the Data:</h1><div className='row'>{arr}</div></div>
+    let arr = data.map((value,index)=><Data key={index} of={value}/>)
+    return  (
+    <div className="container">
+      <h1>Below is the Data:</h1>
+      <div className='row'>{arr}</div>
+    </div>
+    )
   }
   
   return <h1>No data</h1>

@@ -1,7 +1,10 @@
 
-.obj{
-  border: 1px solid grey;
-  height: 350px;
-  margin-top: 20px;
-}
+  .obj{
+    height: 450px;
+    margin-top: 20px;
+    border-radius: 10px;
+  }
 
+  .id{
+    border: 1px solid white;
+  }
