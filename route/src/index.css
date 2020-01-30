@@ -1,0 +1,33 @@
+
+.obj{
+  height: 900px;
+  margin-top: 20px;
+  border-radius: 10px;
+}
+
+.id{
+  border: 1px solid white;
+}
+h1{
+  height: 100px;
+  padding-top:27px;
+  padding-left: 20px;
+  margin-top: 20px;
+  border-radius: 10px;
+}
+
+
+ul > :first-child{
+  line-height: 1;
+  border-bottom: 1px solid white;
+  background-color:yellowgreen !important;
+}
+ul{
+  margin-top: 20px;
+  width: 49%;
+  float: left;
+
+}
+.data{
+  text-transform: capitalize;
+}
