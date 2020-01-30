@@ -6,7 +6,7 @@ export function Display(props){
   let data = props.data;
   
   if(data.length > 0 ){
-    let arr = data.map((value)=><Link to={`/data/${value.id}`}><li key={value.id} className="list-group-item">Id {value.id}</li></Link>)
+    let arr = data.map((value)=><Link to={`/data/${value.id}`} key={value.id}><li className="list-group-item">Id {value.id}</li></Link>)
     return  (
       <div className="container"> 
         <Router>
