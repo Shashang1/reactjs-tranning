@@ -6,7 +6,7 @@ export const Data = (props) => {
   let {id}=useParams();
   let arr = Object.values(props.arr);
   let obj = arr.find((value) => value.id===Number(id))
-  
+ 
   return (
     <ul>
       <Iterator obj={obj} id={id} />

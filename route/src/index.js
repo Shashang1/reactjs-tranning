@@ -1,8 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import Main from './main';
+import {App} from './app';
 
 
-ReactDOM.render(<Main url="https://jsonplaceholder.typicode.com/users"/>, document.getElementById('root'));
+ReactDOM.render(<App />, document.getElementById('root'));
 

@@ -1,28 +1,25 @@
 import React from 'react';
-import {Link, BrowserRouter as Router, Switch, Route} from 'react-router-dom';
+import {Link, BrowserRouter as Router, Switch, Route, useRouteMatch} from 'react-router-dom';
 import {Data} from './data.js';
 
 export function Display(props){
   let data = props.data;
+  let match = useRouteMatch()
   
   if(data.length > 0 ){
-    let arr = data.map((value)=><Link to={`/data/${value.id}`} key={value.id}><li className="list-group-item">Id {value.id}</li></Link>)
+    let arr = data.map((value)=><Link to={`${match.url}/${value.id}`} key={value.id}><li className="list-group-item">Id {value.id}</li></Link>)
     return  (
-      <div className="container"> 
-        <Router>
+      <Router>
+        <ul className="list-group">
+          {arr}
+        </ul>
         
-          <h1 className="bg-primary text-white">Below is the Data:</h1>
-          <ul className="list-group">
-            {arr}
-          </ul>
-        
-          <Switch>
-            <Route path="/data/:id">
-              <Data arr={data}/>
-            </Route>
-          </Switch>
-        </Router>
-      </div>
+        <Switch>
+          <Route path={`${match.url}/:id`}>
+            <Data arr={data}/>
+          </Route>
+        </Switch>
+      </Router>
     )
   }
   
