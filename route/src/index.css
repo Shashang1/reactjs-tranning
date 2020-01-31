@@ -7,7 +7,9 @@ ul{
   float: left;
   margin-top: 10px;
   margin-left: 0px;
+  text-transform: capitalize;
 }
 .nav{
   width: 100%;
 }
+
