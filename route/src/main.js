@@ -1,21 +1,26 @@
 import React from 'react';
 import { Display } from './display';
-import { Home } from './home.js'
 
 class Main extends React.Component{
   constructor(props){
     super(props);
     this.state = {data:[]};
-  }
-  
-  render(){
-    if(this.props.url===""){
-      return <Home />
-    }
     fetch(this.props.url)
     .then((data)=>data.json())
     .then((json)=>{this.setState({data:json})})
+    .catch(console.log("Loading..."))
+  }
 
+  componentDidUpdate(prevprop){
+    if(this.props.url!==prevprop.url){
+      fetch(this.props.url)
+      .then((data)=>data.json())
+      .then((json)=>{this.setState({data:json})})
+      .catch(console.log("Loading..."))
+    }
+  }
+  
+  render(){
     return <Display data={this.state.data}/>
   }
 }

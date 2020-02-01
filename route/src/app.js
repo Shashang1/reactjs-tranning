@@ -1,6 +1,7 @@
 import React from 'react'
 import { Link, BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import Main from './main'
+import {Home} from './home.js'
 
 export const App = ()=>{
   return(
@@ -25,7 +26,7 @@ export const App = ()=>{
             <Main url="https://jsonplaceholder.typicode.com/comments"/>
           </Route>
           <Route path="/" exact>
-            <Main url=""/>
+            <Home />
           </Route> 
         </Switch>
       </Router>
