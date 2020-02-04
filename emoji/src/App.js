@@ -5,7 +5,6 @@ import EmojiResults from "./EmojiResults";
 import filterEmoji from "./filterEmoji";
 import { BrowserRouter, Route } from "react-router-dom";
 import {Emoji}   from './emoji';
-import Clipboard from 'clipboard'
 
 export default class App extends PureComponent {
   constructor(props) {
@@ -20,13 +19,7 @@ export default class App extends PureComponent {
       filteredEmoji: filterEmoji(event.target.value, 20)
     });
   };
-  componentDidMount() {
-    this.clipboard = new Clipboard(".copy-to-clipboard");
-  }
 
-  componentWillUnmount() {
-    this.clipboard.destroy();
-  }
 
   render() {
     return (
