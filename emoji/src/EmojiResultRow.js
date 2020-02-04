@@ -14,7 +14,7 @@ export default class EmojiResultsRow extends PureComponent {
     const src = `//cdn.jsdelivr.net/emojione/assets/png/${codePointHex}.png`;
     return (
       <Link to={`/${this.props.title}`}> 
-        <li className="list-group-item">
+        <li className="list-group-item ">
           <img alt={this.props.title} src={src} />
           <span className="title">{this.props.title}</span>
         </li>

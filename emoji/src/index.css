@@ -28,3 +28,8 @@ span{
   width: 40%;
   border: 1px solid grey;
 }
+@media only screen and (max-width:900px){
+  .output{
+    width: 100%;
+  }
+}
