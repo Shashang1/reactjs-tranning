@@ -1,16 +1,23 @@
 import React from 'react';
+import ChangeButton from '../container/ChangeButton';
 
 
 const View = (props) =>{
   if(props.status==="waiting"){
-    return(<h3>Loading...</h3>)
+    return(<div className="loading"><h3>Loading...</h3></div>)
   }
   else{
     return(
-      <div>
-        <h2>Fetched Lines:</h2>
-        <h3>{props.data[0]}</h3>
-        <h5>Refersh Page for new Line</h5>
+      <div className="card">
+        <div className="card-header">
+          <h4>Fetched Lines:</h4>
+        </div>
+        <div className="card-body">
+          <h6>{props.data[0]}</h6>  
+        </div>
+        <div className="card-footer">
+          <ChangeButton />
+        </div>
       </div>
     )
   }
