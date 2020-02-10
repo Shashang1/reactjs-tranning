@@ -4,28 +4,20 @@ import { createStore, applyMiddleware } from 'redux';
 import {quotes, initialState} from './reducer';
 import thunk from 'redux-thunk';
 import { getQuoteAction } from './actions';
+import MainView from './container/MainView';
+import { Provider } from 'react-redux';
 
 const store = createStore(quotes,initialState, applyMiddleware(thunk));
-console.log(store.getState());
-
-store.subscribe(()=>{
-  if(store.getState().status==="waiting"){
-    console.log("Loading")
-  }
-  else if(store.getState().status==="received"){
-    console.log(store.getState().data[0])
-  }
-})
 
 store.dispatch(getQuoteAction())
 
 
 function App() {
   return (
-    <div className="App">
-      Check console
-    </div>
-  );
+    <Provider store={store}>
+      <MainView />
+    </Provider>
+  )
 }
 
 export default App;
